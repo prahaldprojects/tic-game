@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Base styling for the board */
+.board {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center; /* Center the board vertically */
+  height: 100vh; /* Full viewport height to center vertically */
+  margin: 0;
+}
+
+/* Row styling for the board */
+.board-row {
+  display: flex;
+}
+
+/* Styling for each square */
+.square {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  font-size: 24px;
+  font-weight: bold;
+ 
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for squares */
+.square:hover {
+  background-color: #d0d0d0; /* Light grey on hover */
+  transform: scale(1.1);
+}
+
+/* Animation for winning squares */
+.square.winner {
+  background-color: #ffeb3b;
+  transform: scale(1.1);
+}
+
+/* Styling for the winner message */
+div {
+  margin-top: 20px;
+  font-size: 24px;
+  top: 50px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Reset button styling */
+button {
+  margin-top: -5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4caf50;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect for reset button */
+button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Media query for small devices */
+@media (max-width: 600px) {
+  .square {
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    margin: 2px;
   }
-  to {
-    transform: rotate(360deg);
+
+  div {
+    font-size: 18px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
